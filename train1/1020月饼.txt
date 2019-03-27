@@ -1,0 +1,40 @@
+#include<iostream>
+#include<iomanip>
+#include<string.h>
+#include<algorithm>
+using namespace std;
+struct cake{
+    double stock;
+    double price;
+};
+bool compare(cake a,cake b){
+    return a.price/a.stock>b.price/b.stock;
+}
+int main(){
+    int type,total;
+    int i=0;
+    double sum=0;
+    cake m[100];
+    cake temp;
+    cin>>type>>total;
+    for(i=0;i<type;i++){
+        cin>>m[i].stock;
+    }
+    for(i=0;i<type;i++){
+        cin>>m[i].price;
+    }
+    sort(m,m+length(m),compare);
+    while(total>0&&i<=total){
+        if(total<m[i].stock){
+            sum=sum+total*m[i].price/m[i].stock;
+            total=0;
+        }
+        else{
+            sum=sum+m[i].price;
+            total=total-m[i].stock;
+            i++;
+        }
+    }
+    cout<<setiosflags(ios::fixed)<<setprecision(2)<<sum<<endl;
+    return 0;
+}
