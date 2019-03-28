@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<stdlib.h>
+int gcd(int a,int b){
+    return a%b==0?b:gcd(b,gcd(a,b));
+}
+int main(){
+    int a,b,c,d,e;
+    double len1,len2;
+    scanf("%d/%d",&a,&b);
+    scanf("%d/%d",&c,&d);
+    scanf("%d",e)
+    len1=a/b;
+    len2=c/d;
+    return 0;
+}

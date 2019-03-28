@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n,a,b,c,d;
+    int i,sum1=0,sum2=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    if(b==a+c&&d!=a+c){
+        sum2++;
+    }
+    else if(d==a+c&&b!=a+c){
+        sum1++;
+    }
+    }
+    printf("%d %d",sum1,sum2);
+    return 0;
+}

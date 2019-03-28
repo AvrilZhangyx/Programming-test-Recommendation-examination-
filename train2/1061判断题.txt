@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n,m,i,j,temp;
+    int mark[101],ans[101];
+    int sum[101]={0};
+    scanf("%d%d",&n,&m);
+    for(i=0;i<m;i++){
+        scanf("%d",&mark[i]);
+        //printf("%d ",mark[i]);
+    }
+    for(i=0;i<m;i++){
+        scanf("%d",&ans[i]);
+        //printf("%d ",ans[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            scanf("%d",&temp);
+           // printf("%d %d",temp,ans[j]);
+            if(temp==ans[j]){
+                //printf("%d",temp);
+                sum[i]+=mark[j];
+            }
+        }
+    }
+    for(i=0;i<n;i++){
+        printf("%d\n",sum[i]);
+    }
+    return 0;
+}

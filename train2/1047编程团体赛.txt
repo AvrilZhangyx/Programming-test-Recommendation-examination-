@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n,i,a,b,c,sum[1001]={0};
+    int temp=0,index=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d-%d %d",&a,&b,&c);
+        sum[a]+=c;
+        if(temp<sum[a]){
+            temp=sum[a];
+            index=a;
+        }
+    }
+    printf("%d %d",index,temp);
+    return 0;
+}
