@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+struct People{
+    char name[11];
+    char number[11];
+    int grade;
+};
+int main(){
+    int n,i,max=-1,min=101,flag_max,flag_min;
+    People m[10000];
+    cin>>n;
+    for(i=0;i<n;i++){
+        cin>>m[i].name>>m[i].number>>m[i].grade;
+    }
+    for(i=0;i<n;i++){
+        if(m[i].grade>max){
+            max=m[i].grade;
+            flag_max=i;
+        }
+        if(m[i].grade<min){
+            min=m[i].grade;
+            flag_min=i;
+        }
+    }
+    cout<<m[flag_max].name<<" "<<m[flag_max].number<<endl;
+    cout<<m[flag_min].name<<" "<<m[flag_min].number<<endl;
+    return 0;
+}
